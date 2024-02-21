@@ -5,8 +5,8 @@ export default {
 	components: {},
 	data() {
 		return {
-			username: "eremes",
-			password: "pass123",
+			credentials: "player",
+			password: "password",
 			terms: false,
 			privacy: false,
 			responsible: false,
@@ -20,7 +20,7 @@ export default {
 			authLogin: "loginUser",
 		}),
 		async login() {
-			if (!this.username) {
+			if (!this.credentials) {
 				Swal.fire("Failed!", "Please Input Username", "");
 				return;
 			}
@@ -29,47 +29,16 @@ export default {
 				return;
 			}
 			await this.authLogin({
-				username: this.username,
+				credentials: this.credentials,
 				password: this.password,
 			});
 		},
 	},
-	mounted() {
-		console.log("test");
-	},
+	mounted() {},
 };
 </script>
 
 <template>
-	<!-- <div class="row justify-content-center">
-			<div class="main-container mt-5">
-				<div class="col-2 mx-auto">
-					<div class="row">
-						<label>
-							Email
-							<input
-								class="form-control mb-2"
-								placeholder="Enter email"
-								type="text"
-								v-model="username"
-							/>
-						</label>
-						<label>
-							Password
-							<input
-								class="form-control mb-2"
-								placeholder="Enter password"
-								type="password"
-								v-model="password"
-							/>
-						</label>
-					</div>
-					<button class="btn btn-info w-100" @click="login()">
-						Login
-					</button>
-				</div>
-			</div>
-		</div> -->
 	<div class="container">
 		<div class="container-wrapper d-flex">
 			<div class="left">
@@ -97,7 +66,7 @@ export default {
 									name="credentials"
 									placeholder="Username"
 									required=""
-									v-model="username"
+									v-model="credentials"
 								/>
 							</div>
 						</div>

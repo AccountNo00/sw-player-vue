@@ -51,7 +51,7 @@ export const actions = {
     loginUser({ rootGetters ,commit}, pl) {
 		return new Promise(function (resolve) {
 			$api
-				.post("login", pl, {
+				.post("auth/player/login", pl, {
 					headers: {
 						Authorization: rootGetters["auth/bearer_token"],
 					},

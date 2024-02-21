@@ -17,14 +17,29 @@ export default {
 		...mapGetters("auth", ["profile"]),
 	},
 	methods: {
-		...mapActions("chat", {
-			getChatList: "chatList",
+		...mapActions("messageManagement", {
+			getMessageList: "messageList",
 		}),
 		createMessage() {
 			this.$router.push({ path: "/message-create" });
 		},
+		async initList(p) {
+			var pl = {
+				page: p,
+				limit: 50,
+				sort: "created_at",
+				order: "desc",
+			};
+			// console.log(pl);
+			this.loading = true;
+			const data = await this.getMessageList(pl);
+			this.data = data.data;
+			this.loading = false;
+		},
 	},
-	mounted() {},
+	mounted() {
+		this.initList(1);
+	},
 };
 </script>
 
@@ -102,7 +117,26 @@ export default {
 																	</th>
 																</tr>
 															</thead>
-															<tbody></tbody>
+															<tbody>
+																<tr
+																	v-for="(
+																		data,
+																		index
+																	) in this
+																		.data
+																		.list"
+																	:key="index"
+																>
+																	<td>
+																		{{
+																			data.title
+																		}}
+																	</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+															</tbody>
 														</table>
 														<ul
 															class="float-end pagination"
