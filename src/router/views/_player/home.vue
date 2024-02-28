@@ -92,8 +92,11 @@ export default {
 }
 .section-1 {
 	width: 100%;
-	height: 1000px;
-	background: #10201a;
+	height: 900px;
+	/* background: #10201a; */
+	background-image: url(../../../assets/images/hero-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: auto 1000px;
 }
 .section-2 {
 	display: flex;

@@ -61,12 +61,14 @@ export default {
 }
 .content-1 {
 	height: 150px;
-	background: #02251a;
+	/* background: #02251a; */
+	background: #1d191f;
 	width: 100%;
-	border-bottom: 1px solid #ffc1071a;
+	/* border-bottom: 1px solid #ffc1071a; */
 }
 .copyright {
-	background: #02251a;
+	/* background: #02251a; */
+	background: #151316;
 	height: 70px;
 }
 .copyright > p {

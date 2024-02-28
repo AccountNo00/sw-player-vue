@@ -32,7 +32,7 @@ export default {
 	<div>
 		<div class="banner">
 			<div class="justify-content-center">
-				<div class="col-lg-7 col-xl-6 text-center">
+				<div class="banner-center justify-content-center">
 					<h2 class="title text-white fw-bold">User Profile</h2>
 					<ul
 						class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center"
@@ -143,6 +143,10 @@ export default {
 	<Footer />
 </template>
 <style scoped>
+.banner-center {
+	display: flex;
+	flex-direction: row;
+}
 .profile-inputs {
 	/* background: #02251a; */
 	background: linear-gradient(rgba(6, 46, 41, 0.95), rgba(6, 46, 41, 0.95)),
