@@ -45,125 +45,127 @@ export default {
 
 <template>
 	<navBar />
-	<div class="message-container">
-		<div class="banner">
-			<div class="banner-center justify-content-center">
-				<div class="col-lg-7 col-xl-6 text-center">
-					<h2 class="title text-white fw-bold">Message List</h2>
-					<ul
-						class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center"
-					>
-						<span><a class="" href="/">Home </a></span>
-						<span>⮞</span>
-						<span>Message list</span>
-					</ul>
+	<div class="main-container">
+		<!-- <div class="message-container"> -->
+			<div class="banner">
+				<div class="banner-center justify-content-center">
+					<div class="col-lg-7 col-xl-6 text-center">
+						<h2 class="title text-white fw-bold">Message List</h2>
+						<ul
+							class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center"
+						>
+							<span><a class="" href="/">Home </a></span>
+							<span>⮞</span>
+							<span>Message list</span>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="pt-0 row gy-4 justify-content-center">
-						<div class="col-lg-12">
-							<div class="game-item">
-								<div class="game-inner">
-									<div class="game-item__content">
-										<div class="col-lg-12">
-											<div class="card--lg">
-												<div
-													class="card--body p-sm-5 p-3"
-												>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="pt-0 row gy-4 justify-content-center">
+							<div class="col-lg-12">
+								<div class="game-item">
+									<div class="game-inner">
+										<div class="game-item__content">
+											<div class="col-lg-12">
+												<div class="card--lg">
 													<div
-														class="reset-header mb-5 text-center"
+														class="card--body p-sm-5 p-3"
 													>
-														<div class="icon">
-															<i
-																class="las la-envelope"
-															></i>
+														<div
+															class="reset-header mb-5 text-center"
+														>
+															<div class="icon">
+																<i
+																	class="las la-envelope"
+																></i>
+															</div>
+															<h3
+																class="mt-3 text-white"
+															>
+																Message Inbox
+															</h3>
+															<button
+																type="button"
+																class="cmn--btn btn-sm active col-sm-3 p-1 view-bets-btn view-message-btn"
+																@click="
+																	createMessage()
+																"
+															>
+																Create Message
+															</button>
 														</div>
-														<h3
-															class="mt-3 text-white"
+														<div
+															class="table--responsive--md"
 														>
-															Message Inbox
-														</h3>
-														<button
-															type="button"
-															class="cmn--btn btn-sm active col-sm-3 p-1 view-bets-btn view-message-btn"
-															@click="
-																createMessage()
-															"
-														>
-															Create Message
-														</button>
-													</div>
-													<div
-														class="table--responsive--md"
-													>
-														<table class="table">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>
-																		Title
-																	</th>
-																	<th>
-																		Status
-																	</th>
-																	<th>
-																		Date
-																	</th>
-																	<th>
-																		Action
-																	</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr
-																	v-for="(
-																		data,
-																		index
-																	) in this
-																		.data
-																		.list"
-																	:key="index"
-																>
-																	<td>
-																		{{
-																			data.title
-																		}}
-																	</td>
-																	<td></td>
-																	<td></td>
-																	<td></td>
-																</tr>
-															</tbody>
-														</table>
-														<ul
-															class="float-end pagination"
-														>
-															<li
-																class="page-item"
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>#</th>
+																		<th>
+																			Title
+																		</th>
+																		<th>
+																			Status
+																		</th>
+																		<th>
+																			Date
+																		</th>
+																		<th>
+																			Action
+																		</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr
+																		v-for="(
+																			data,
+																			index
+																		) in this
+																			.data
+																			.list"
+																		:key="index"
+																	>
+																		<td>
+																			{{
+																				data.title
+																			}}
+																		</td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																	</tr>
+																</tbody>
+															</table>
+															<ul
+																class="float-end pagination"
 															>
-																<a
-																	class="page-link"
-																	role="button"
-																	tabindex="0"
-																	href="#"
-																	>«</a
+																<li
+																	class="page-item"
 																>
-															</li>
-															<li
-																class="page-item"
-															>
-																<a
-																	class="page-link"
-																	role="button"
-																	tabindex="0"
-																	href="#"
-																	>»</a
+																	<a
+																		class="page-link"
+																		role="button"
+																		tabindex="0"
+																		href="#"
+																		>«</a
+																	>
+																</li>
+																<li
+																	class="page-item"
 																>
-															</li>
-														</ul>
+																	<a
+																		class="page-link"
+																		role="button"
+																		tabindex="0"
+																		href="#"
+																		>»</a
+																	>
+																</li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -175,7 +177,7 @@ export default {
 					</div>
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
 	</div>
 	<Footer />
 </template>

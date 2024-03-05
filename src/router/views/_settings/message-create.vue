@@ -30,7 +30,7 @@ export default {
 
 <template>
 	<navBar />
-	<div class="message-container">
+	<div class="main-container">
 		<div class="banner">
 			<div class="row justify-content-center">
 				<div class="col-lg-7 col-xl-6 text-center">

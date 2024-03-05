@@ -29,7 +29,7 @@ export default {
 
 <template>
 	<navBar />
-	<div>
+	<div class="main-container">
 		<div class="banner">
 			<div class="justify-content-center">
 				<div class="banner-center justify-content-center">
@@ -145,7 +145,8 @@ export default {
 <style scoped>
 .banner-center {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
 }
 .profile-inputs {
 	/* background: #02251a; */
